@@ -1,3 +1,5 @@
+# README
+
 ## Demo
 
 See the plugin at work here: [Click Here](http://ymcatar.gitbooks.io/gitbook-test/content/testing_mcqx.html)
@@ -36,7 +38,7 @@ Syntax too complicated? Use the code generator in the [plugin homepage](http://y
 
 Each multiple choice question has this basic syntax, they are **not optional**:
 
-```
+```text
 {%mcq ans="o1"%}
 {%title%} This is a question?
 {%o1%} First option
@@ -46,20 +48,26 @@ Each multiple choice question has this basic syntax, they are **not optional**:
 {%endmcq%}
 ```
 
-The ```{%mcq%}``` tag (line 1) must have the following arguments for it to work:
+The \`\`\`
 
-* **```ans```**: the id of correct option (possible values: ```o1```,```o2```,```o3```,```o4```,```o5```,```o6```,```o7```,```o8```)
+\`\`\` tag \(line 1\) must have the following arguments for it to work:
 
-The content of the multiple choice question is included in the book as a sub-block for the mcq tag (line 2 - 7).
+* **`ans`**: the id of correct option \(possible values: `o1`,`o2`,`o3`,`o4`,`o5`,`o6`,`o7`,`o8`\)
 
-* **```title```**: question title (no markdown support for now).
-* **```o1```, ```o2```, ```o3```, ```o4```, ```o5```, ```o6```, ```o7```, ```o8```**: text for each options (you can include up to eight optio).
+The content of the multiple choice question is included in the book as a sub-block for the mcq tag \(line 2 - 7\).
+
+* **`title`**: question title \(no markdown support for now\).
+* **`o1`, `o2`, `o3`, `o4`, `o5`, `o6`, `o7`, `o8`**: text for each options \(you can include up to eight optio\).
 
 ### Display hints
 
-You can add a ```{%hint%}``` sub-block to display a hint message. They will be shown when the user click the "Hint" button.
+You can add a \`\`\`
 
-```
+{% hint style="info" %}
+
+\`\`\` sub-block to display a hint message. They will be shown when the user click the "Hint" button.
+
+```text
 {%mcq ans="o1", count=2%}
 {%title%} This is a question?
 {%o1%} First option
@@ -72,9 +80,11 @@ You can add a ```{%hint%}``` sub-block to display a hint message. They will be s
 
 ### Display only a certain number of options
 
-You can add an optional ```count``` parameter to the ````{%mcq%}``` tag to show only a certain number of options.
+You can add an optional `count` parameter to the \`\`\`\`
 
-```
+\`\`\` tag to show only a certain number of options.
+
+```text
 {%mcq ans="o1", count=2%}
 {%title%} This is a question?
 {%o1%} First option
@@ -88,13 +98,15 @@ You can add an optional ```count``` parameter to the ````{%mcq%}``` tag to show 
 {%endmcq%}
 ```
 
-In this case, only two options will be displayed for the user to choose (the correct answer will always be included). The order of the options will be random (no matter you set the ```random=true``` argument for not).
+In this case, only two options will be displayed for the user to choose \(the correct answer will always be included\). The order of the options will be random \(no matter you set the `random=true` argument for not\).
 
 ### Random
 
-You can add an optional ```random=true``` parameter to the ```{%mcq%}``` tag to let the order of the options to be randomized.
+You can add an optional `random=true` parameter to the \`\`\`
 
-```
+\`\`\` tag to let the order of the options to be randomized.
+
+```text
 {%mcq ans="o1", random=true%}
 {%title%} This is a question?
 {%o1%} First option
@@ -103,3 +115,4 @@ You can add an optional ```random=true``` parameter to the ```{%mcq%}``` tag to 
 {%o4%} Fourth option
 {%endmcq%}
 ```
+
